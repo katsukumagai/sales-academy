@@ -24,7 +24,7 @@
   fetch("/cdn-cgi/access/get-identity", { credentials: "same-origin" })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (j) { mark(j.email || "member"); })
-    .catch(function () { mark("PREVIEW (not behind Access)"); });
+    .catch(function () { mark("PREVIEW"); });
 
   ["contextmenu", "copy", "cut", "dragstart", "selectstart"].forEach(function (ev) {
     document.addEventListener(ev, function (e) { e.preventDefault(); });
